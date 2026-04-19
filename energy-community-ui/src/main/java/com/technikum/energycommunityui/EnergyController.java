@@ -47,7 +47,7 @@ public class EnergyController {
     @FXML
     protected void onHistoricalDataClick() {
         if (startDatePicker.getValue() == null || startHourSpinner == null || endDatePicker.getValue() == null || endHourSpinner == null) {
-            historicalDataLabel.setText("Please fill in all required fields");
+            historicalDataLabel.setText("Please fill in all required fields.");
         } else {
             String queryForStartDatePicker = startDatePicker.getValue().toString();
             String queryForEndDatePicker = endDatePicker.getValue().toString();

@@ -12,7 +12,7 @@ public class EnergyApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(EnergyApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
-        stage.setTitle("Energy communities");
+        stage.setTitle("Energy Communities");
         stage.setScene(scene);
         stage.show();
     }

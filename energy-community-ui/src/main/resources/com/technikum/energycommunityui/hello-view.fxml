@@ -7,17 +7,18 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.technikum.energycommunityui.EnergyController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.technikum.energycommunityui.EnergyController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-          <Label fx:id="currentDataLabel" />
-    <Button onAction="#onCurrentDataClick" text="Get Current Data" />
-   <Label fx:id="historicalDataLabel" layoutX="124.0" layoutY="30.0" />
-   <DatePicker fx:id="startDatePicker" editable="true" promptText="Start" />
-   <Spinner fx:id="startHourSpinner" editable="true" initialValue="0" max="23" min="0" />
-   <DatePicker fx:id="endDatePicker" editable="true" promptText="End" />
-   <Spinner fx:id="endHourSpinner" editable="true" initialValue="0" max="23" min="0" />
-   <Button layoutX="30.0" layoutY="67.0" onAction="#onHistoricalDataClick" text="Get Historical Data" />
+    <Label fx:id="currentDataLabel"/>
+    <Button onAction="#onCurrentDataClick" text="Get Current Data"/>
+    <Label fx:id="historicalDataLabel" layoutX="124.0" layoutY="30.0"/>
+    <DatePicker fx:id="startDatePicker" promptText="Start"/>
+    <Spinner fx:id="startHourSpinner" initialValue="0" max="23" min="0"/>
+    <DatePicker fx:id="endDatePicker" promptText="End"/>
+    <Spinner fx:id="endHourSpinner" initialValue="0" max="23" min="0"/>
+    <Button layoutX="30.0" layoutY="67.0" onAction="#onHistoricalDataClick" text="Get Historical Data"/>
 </VBox>
