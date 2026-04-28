@@ -39,9 +39,13 @@ public class EnergyController {
 
             HttpResponse<String> response = client.send(getRequest, HttpResponse.BodyHandlers.ofString());
 
-            currentDataLabel.setText(response.body());
+            if (response.statusCode() >= 200 && response.statusCode() < 300) {
+                currentDataLabel.setText(response.body());
+            } else {
+                currentDataLabel.setText("Server error: " + response.statusCode());
+            }
         } catch (Exception exception) {
-            System.err.println("Something went wrong during get" + exception.getMessage());
+            currentDataLabel.setText("Could not load current data. Is the REST API running?");
         }
     }
 
