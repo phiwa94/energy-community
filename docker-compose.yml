@@ -1,0 +1,25 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: energy-community-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  postgres:
+    image: postgres:16
+    container_name: energy-community-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: energy_community
+      POSTGRES_USER: energy_user
+      POSTGRES_PASSWORD: energy_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
