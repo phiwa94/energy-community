@@ -23,7 +23,7 @@ public class EnergyProductionScheduler {
 
         double random = Math.random() * 2;
 
-        double producedEnergy = /*shortwaveRadiationFactor*/ 100 * random;
+        double producedEnergy = shortwaveRadiationFactor * random;
 
         String message = "{\"type\": \"producer\", \"association\": \"community\", \"kwh\": " +  producedEnergy + ", \"datetime\": \"" + LocalDateTime.now() + "\"}";
 

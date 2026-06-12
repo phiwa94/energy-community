@@ -46,7 +46,6 @@ public class ShortwaveRadiationService {
     }
 
     public int getShortwaveRadiationFactor() {
-
         return (int) Math.round(this.getShortwaveRadiation() / 1000);
     }
 }
