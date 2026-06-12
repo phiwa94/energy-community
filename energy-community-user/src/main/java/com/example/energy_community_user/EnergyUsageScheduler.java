@@ -19,7 +19,7 @@ public class EnergyUsageScheduler {
 
         double random = Math.random() * 2;
 
-        double usedEnergy = getPeakHourFactor() * random;
+        double usedEnergy = random + (getPeak() ? 2 : 0);
 
         String message = "{\"type\": \"user\", \"association\": \"community\", \"kwh\": " +  usedEnergy + ", \"datetime\": \"" + LocalDateTime.now() + "\"}";
 
@@ -27,14 +27,14 @@ public class EnergyUsageScheduler {
     }
 
 
-    private double getPeakHourFactor() {
+    private boolean getPeak() {
         LocalTime now = LocalTime.now();
         boolean isMorningPeak = !now.isBefore(LocalTime.of(7, 0)) && now.isBefore(LocalTime.of(9, 0));
         boolean isEveningPeak = !now.isBefore(LocalTime.of(19, 0)) && now.isBefore(LocalTime.of(22, 0));
 
         if(isMorningPeak || isEveningPeak) {
-            return 1.8;
+            return true;
         }
-        return 1.0;
+        return false;
     }
 }
