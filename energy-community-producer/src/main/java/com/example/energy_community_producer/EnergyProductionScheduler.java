@@ -10,10 +10,11 @@ import java.util.Random;
 public class EnergyProductionScheduler {
     private final MessagingService messagingService;
 
-    private final ShortwaveRadiationService shortwaveRadiationService = new ShortwaveRadiationService();
+    private final ShortwaveRadiationService shortwaveRadiationService;
 
-    public EnergyProductionScheduler(MessagingService messagingService) {
+    public EnergyProductionScheduler(MessagingService messagingService, ShortwaveRadiationService shortwaveRadiationService) {
         this.messagingService = messagingService;
+        this.shortwaveRadiationService = shortwaveRadiationService;
     }
 
     @Scheduled(fixedDelay = 3000)

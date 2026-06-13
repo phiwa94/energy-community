@@ -7,6 +7,5 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 public interface CurrentPercentageRepository extends JpaRepository<CurrentPercentage, Long> {
-
     Optional<CurrentPercentage> findByHourStart(LocalDateTime hourStart);
 }
