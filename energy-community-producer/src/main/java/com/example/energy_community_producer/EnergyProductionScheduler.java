@@ -19,7 +19,7 @@ public class EnergyProductionScheduler {
     @Scheduled(fixedDelay = 3000)
     public void produce() {
 
-        int shortwaveRadiationFactor = this.shortwaveRadiationService.getShortwaveRadiationFactor();
+        double shortwaveRadiationFactor = this.shortwaveRadiationService.getShortwaveRadiationFactor();
 
         double random = Math.random() * 2;
 

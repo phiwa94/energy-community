@@ -25,18 +25,7 @@ public class ShortwaveRadiationService {
 
             String after = response.body().split("\"shortwave_radiation\":")[2];
             this.shortwaveRadiation = Double.parseDouble(after.split("[}]")[0].trim());
-
-            /* error handling tbd
-            if (response.statusCode() >= 200 && response.statusCode() < 300) {
-                if (response.body().equals("[]")) {
-                    historicalDataLabel.setText("No data found for selected time range.");
-                } else {
-                    historicalDataLabel.setText(response.body());
-                }
-            } else {
-                historicalDataLabel.setText("Server error: " + response.statusCode());
-            }
-             */
+            System.out.println(this.shortwaveRadiation);
 
         } catch (Exception exception) {
             System.out.println("Error with receiving weather API data - " + exception);
@@ -45,7 +34,7 @@ public class ShortwaveRadiationService {
         return shortwaveRadiation;
     }
 
-    public int getShortwaveRadiationFactor() {
-        return (int) Math.round(this.getShortwaveRadiation() / 1000);
+    public double getShortwaveRadiationFactor() {
+        return this.getShortwaveRadiation() / 1000;
     }
 }
