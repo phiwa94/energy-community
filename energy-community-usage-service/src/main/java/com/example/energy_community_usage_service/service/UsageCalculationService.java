@@ -23,8 +23,8 @@ public class UsageCalculationService {
         HourlyUsage hourlyUsage = hourlyUsageRepository.findByHourStart(hourStart)
                 .orElseGet(() -> new HourlyUsage(hourStart));
 
-        String messageType = normalize(message.getType());
-        String association = normalize(message.getAssociation());
+        String messageType = message.getType();
+        String association = message.getAssociation();
 
         if (!"community".equals(association)) {
             throw new IllegalArgumentException("Unsupported association: " + message.getAssociation());
@@ -54,8 +54,4 @@ public class UsageCalculationService {
         hourlyUsage.setGridUsed(hourlyUsage.getGridUsed() + gridPart);
     }
 
-    // might not need, will test later - if unnecessary delete
-    private String normalize(String value) {
-        return value == null ? "" : value.trim().toLowerCase();
-    }
 }
