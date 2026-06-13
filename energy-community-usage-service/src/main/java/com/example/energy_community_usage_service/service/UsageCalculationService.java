@@ -54,6 +54,7 @@ public class UsageCalculationService {
         hourlyUsage.setGridUsed(hourlyUsage.getGridUsed() + gridPart);
     }
 
+    // might not need, will test later - if unnecessary delete
     private String normalize(String value) {
         return value == null ? "" : value.trim().toLowerCase();
     }
