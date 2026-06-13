@@ -30,10 +30,10 @@ public class PercentageCalculationService {
         double communityDepleted = calculateCommunityDepleted(hourlyUsage);
         double gridPortion = calculateGridPortion(hourlyUsage);
 
-        CurrentPercentage currentPercentage = currentPercentageRepository
-                .findByHourStart(hourStart)
-                .orElseGet(() -> new CurrentPercentage(hourStart));
+        currentPercentageRepository.deleteAll();
+        currentPercentageRepository.flush();
 
+        CurrentPercentage currentPercentage = new CurrentPercentage(hourStart);
         currentPercentage.setCommunityDepleted(communityDepleted);
         currentPercentage.setGridPortion(gridPortion);
 
