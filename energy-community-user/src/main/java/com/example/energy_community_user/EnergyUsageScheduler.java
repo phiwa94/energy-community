@@ -32,9 +32,6 @@ public class EnergyUsageScheduler {
         boolean isMorningPeak = !now.isBefore(LocalTime.of(7, 0)) && now.isBefore(LocalTime.of(9, 0));
         boolean isEveningPeak = !now.isBefore(LocalTime.of(19, 0)) && now.isBefore(LocalTime.of(22, 0));
 
-        if(isMorningPeak || isEveningPeak) {
-            return true;
-        }
-        return false;
+        return isMorningPeak || isEveningPeak;
     }
 }
