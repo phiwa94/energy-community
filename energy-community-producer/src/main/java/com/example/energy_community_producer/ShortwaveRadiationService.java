@@ -31,7 +31,7 @@ public class ShortwaveRadiationService {
                 this.shortwaveRadiation = Double.parseDouble(after.split("[}]")[0].trim());
                 System.out.println(this.shortwaveRadiation);
             } else if (response.statusCode() == 404) {
-                System.out.println("No current percentage data found yet.");
+                System.out.println("No current data found yet.");
             } else {
                 System.out.println("Server error: " + response.statusCode());
             }
